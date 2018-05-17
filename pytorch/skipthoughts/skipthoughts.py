@@ -132,7 +132,7 @@ class AbstractSkipThoughts(nn.Module):
  
     def _process_lengths(self, input):
         max_length = input.size(1)
-        lengths = list(max_length - input.data.eq(0).sum(1).squeeze())
+        lengths = list(max_length - input.data.eq(0).sum(1))
         return lengths
 
     def _load_rnn(self):
